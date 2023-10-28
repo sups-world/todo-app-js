@@ -57,46 +57,65 @@ button {
   outline: none;
   padding: 16px 50px;
   background: red;
-  color:white;
-  cursor:pointer;
+  color: white;
+  cursor: pointer;
   border-radius: 40px;
   font-size: 20px;
   transition: background 0.4s ease-in-out;
 }
 
-button:hover{
-    background: green;
+button:hover {
+  background: green;
 }
 
-ul li{
-    list-style: none;
-    font-size: 17px;
-    padding: 12px 8px 12px 50px;
-    /* to prevent user selecting the text on list */
-    user-select: none;
-    cursor: pointer;
-      /* since ::before has absolute position, we give relative position here */
-  position:relative;
+ul li {
+  list-style: none;
+  font-size: 17px;
+  padding: 12px 8px 12px 50px;
+  /* to prevent user selecting the text on list */
+  user-select: none;
+  cursor: pointer;
+  /* since ::before has absolute position, we give relative position here */
+  position: relative;
+}
+
+ul li::before {
+  content: "";
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  background-image: url(images/round.png);
+  background-size: cover;
+  background-position: center;
+  top: 12px;
+  left: 10px;
+}
+
+ul li.checked {
+  color: green;
+  text-decoration: line-through;
+}
+
+ul li.checked::before {
+  background-image: url(images/solid-round.png);
+}
+
+ul li span {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  right:0;
+  top:5px;
+  font-size:40px;
+  color:red;
+  font-weight: bolder;
+  text-align:center;
+  line-height:40px;
+  border-radius:50%;
 
 }
 
-ul li::before{
-    content:'';
-    position: absolute;
-    height: 28px;
-    width:28px;
-    background-image: url(images/round.png);
-    background-size: cover;
-    background-position: center;
-    top:12px;
-    left:10px;
-}
-
-ul li.checked{
-    color:green;
-    text-decoration: line-through;
-}
-
-ul li.checked::before{
-    background-image: url(images/solid-round.png);
+ul li span:hover {
+  transform:scale(1.4);
+  background-color: rgb(186, 218, 237);
 }
