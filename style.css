@@ -91,3 +91,12 @@ ul li::before{
     top:12px;
     left:10px;
 }
+
+ul li.checked{
+    color:green;
+    text-decoration: line-through;
+}
+
+ul li.checked::before{
+    background-image: url(images/solid-round.png);
+}
