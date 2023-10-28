@@ -67,3 +67,27 @@ button {
 button:hover{
     background: green;
 }
+
+ul li{
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    /* to prevent user selecting the text on list */
+    user-select: none;
+    cursor: pointer;
+      /* since ::before has absolute position, we give relative position here */
+  position:relative;
+
+}
+
+ul li::before{
+    content:'';
+    position: absolute;
+    height: 28px;
+    width:28px;
+    background-image: url(images/round.png);
+    background-size: cover;
+    background-position: center;
+    top:12px;
+    left:10px;
+}
